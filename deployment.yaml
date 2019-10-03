@@ -1,0 +1,78 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: front
+  labels:
+    app: demo
+    tier: front 
+  name: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+      tier: front 
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: demo
+        tier: front 
+    spec:
+      containers:
+      - image: satare/appli:front
+        imagePullPolicy: IfNotPresent
+        name: front
+        env:
+        - name: WS_URL
+          value: "http://back.back.maesh:5000"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      restartPolicy: Always
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: back
+  labels:
+    app: demo
+    tier: back 
+  name: back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+      tier: back 
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: demo
+        tier: back
+    spec:
+      containers:
+      - image: satare/appli:back
+        imagePullPolicy: IfNotPresent
+        name: back
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  front:
+    image: satare/appli:front
+    environment: 
+      WS_URL: "http://back:5000"
+    ports: 
+      - 5000:5000
+
+  back:
+    image: satare/appli:back

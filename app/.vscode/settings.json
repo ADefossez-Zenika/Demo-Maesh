@@ -1,0 +1,8 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#391278",
+        "titleBar.activeBackground": "#501AA8",
+        "titleBar.activeForeground": "#FBF9FE"
+    },
+    "python.pythonPath": "/usr/local/bin/python3"
+}

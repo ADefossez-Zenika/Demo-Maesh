@@ -1,0 +1,49 @@
+#
+# FRONT
+#
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demo
+    tier: front 
+  name: front
+  namespace: front
+  annotations:
+#    maesh.containo.us/traffic-type: "http"
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: demo
+    tier: front 
+  sessionAffinity: None
+  type: ClusterIP
+
+---
+#
+# BACK
+#
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demo
+    tier: back 
+  name: back
+  namespace: back
+  annotations:
+#    maesh.containo.us/circuit-breaker-expression: "LatencyAtQuantileMS(50.0) > 200"
+#    maesh.containo.us/retry-attempts: "2"
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: demo
+    tier: back    
+  sessionAffinity: None
+  type: ClusterIP

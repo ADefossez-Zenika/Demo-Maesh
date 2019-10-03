@@ -1,0 +1,17 @@
+{
+	"ulid": "01DP6DT9STXFM10735CPRKHCAS",
+	"minTime": 1570015562475,
+	"maxTime": 1570017600000,
+	"stats": {
+		"numSamples": 15912,
+		"numSeries": 78,
+		"numChunks": 78
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01DP6DT9STXFM10735CPRKHCAS"
+		]
+	},
+	"version": 1
+}
