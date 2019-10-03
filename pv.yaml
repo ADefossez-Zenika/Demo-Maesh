@@ -28,7 +28,7 @@ metadata:
   name: prom-pv
 spec:
   capacity:
-    storage: 15Gi
+    storage: 12Gi
   # volumeMode field requires BlockVolume Alpha feature gate to be enabled.
   volumeMode: Filesystem
   accessModes:
