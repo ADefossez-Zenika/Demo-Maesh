@@ -1,0 +1,17 @@
+{
+	"ulid": "01DP8DSVECBNN51SN295CY9AP3",
+	"minTime": 1570082400000,
+	"maxTime": 1570089600000,
+	"stats": {
+		"numSamples": 14820,
+		"numSeries": 86,
+		"numChunks": 172
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01DP8DSVECBNN51SN295CY9AP3"
+		]
+	},
+	"version": 1
+}
