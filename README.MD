@@ -19,6 +19,8 @@ your application should be deploying.
 
 ## Play with it
 
+Install Maesh via the helm install command provided by the documentation.
+
 Create a port-forward :
 
 ```bash
