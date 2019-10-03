@@ -2,7 +2,7 @@
 
 ## Install It
 
-clone this repository, be sure to have helm installed and kubedns as a network provider.
+clone this repository, be sure to have helm installed and coredns as a network provider.
 
 in the pv.yaml file, make sure to change the path to actual existing paths on your laptop
 
