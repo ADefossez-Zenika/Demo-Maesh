@@ -10,7 +10,6 @@ ws=os.environ['WS_URL']
 @app.route('/')
 def accueil():
     r = requests.get(ws+"/tracks")
-    print (r.text)
     return render_template('index.html', titre=r.text)
 
 
