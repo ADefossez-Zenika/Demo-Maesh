@@ -10,7 +10,6 @@ metadata:
   name: front
   namespace: front
   annotations:
-#    maesh.containo.us/traffic-type: "http"
 spec:
   ports:
   - port: 80
@@ -35,8 +34,8 @@ metadata:
   name: back
   namespace: back
   annotations:
-#    maesh.containo.us/circuit-breaker-expression: "LatencyAtQuantileMS(50.0) > 200"
-#    maesh.containo.us/retry-attempts: "2"
+    #maesh.containo.us/circuit-breaker-expression: "LatencyAtQuantileMS(50.0) > 200"
+    #maesh.containo.us/retry-attempts: "2"
 spec:
   ports:
   - port: 5000
