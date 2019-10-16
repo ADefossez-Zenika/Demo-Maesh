@@ -26,7 +26,7 @@ class Tracks(Resource):
             "Une nuée de corbeaux cherche toujours un pot de confiture artisanal.",
             "CanardPC code avec François Hollande."
             )
-        sleep (random.uniform(0.5,2.5))
+        sleep (random.uniform(0.1,2))
         return Response(random.choice(result), status=200)
 
 api.add_resource(Tracks, '/tracks') 
