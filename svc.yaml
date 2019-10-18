@@ -12,8 +12,8 @@ metadata:
   annotations:
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+  - name: http
+    port: 80
     targetPort: 5000
   selector:
     app: demo

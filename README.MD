@@ -24,7 +24,7 @@ Create a bunch of port-forward :
 Jaeger:
 
 ```bash
-kubectl kubectl port-forward svc/jaeger-query -n=maesh 5001:16686
+kubectl  port-forward svc/jaeger-query -n=maesh 5001:16686
 ```
 
 Front:
