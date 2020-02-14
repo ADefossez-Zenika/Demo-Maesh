@@ -5,13 +5,18 @@ import requests
 import json
 import os
 
-ws=os.environ['WS_URL']
+if 'WS_URL' in os.environ:
+    ws=os.environ['WS_URL']
+
 
 @app.route('/')
 def accueil():
-    r = requests.get(ws+"/tracks")
-    return render_template('index.html', titre=r.text)
-
+    if 'ws' in locals():
+        r = requests.get(ws+"/tracks")
+        baratin=r.text
+    else:
+        baratin="Salut les copains!"
+    return render_template('index.html', titre=baratin)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
