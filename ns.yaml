@@ -9,5 +9,10 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: appli
+  name: front
 
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: back
